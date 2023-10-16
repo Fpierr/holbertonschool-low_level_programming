@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
+#include <stdio>
 
 /**
  * main to print rand number positive, negative or zero
