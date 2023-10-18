@@ -13,12 +13,12 @@ int main(void)
 	for (lowercase = 'a'; lowercase <= 'z'; lowercase++)
 	{
 		putchar(lowercase);
-		putchar('\n');
 	}
-	for(upercase = 'A'; upercase <= 'Z'; upercase++)
+	for (upercase = 'A'; upercase <= 'Z'; upercase++)
 	{
-		putchar(lowercase);
-		putchar('\n');
+		putchar(upercase);
 	}
+	putchar('\n');
+
 	return (0);
 }
