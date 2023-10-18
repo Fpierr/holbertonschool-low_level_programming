@@ -8,6 +8,7 @@
 int main(void)
 {
 	char alphab;
+
 	for (alphab = 'a'; alphab <= 'z'; alphab++)
 	{
 	if (alphab != 'q' && alphab != 'e')
