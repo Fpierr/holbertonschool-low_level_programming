@@ -13,10 +13,11 @@ int main(void)
 	{
 		putchar(n16);
 	}
-	for(n16 = 'a'; n16 <= 'f'; n16++)
+	for (n16 = 'a'; n16 <= 'f'; n16++)
 	{
 		putchar(n16);
 	}
+	putchar('\n');
 
 	return (0);
 }
