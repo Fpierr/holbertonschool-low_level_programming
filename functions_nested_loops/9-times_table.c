@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * times_table - print time table 
+ * times_table - print time table
  *
  * Return: Always 0.
  */
@@ -26,7 +26,7 @@ void times_table(void)
 			else
 			{
 				_putchar((k / 10) + '0');
-				_putchar((k %10) +'0');
+				_putchar((k % 10) + '0');
 			}
 		}
 		if (k != 9)
@@ -34,6 +34,6 @@ void times_table(void)
 			_putchar(',');
 			_putchar(32);
 		}
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
