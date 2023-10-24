@@ -28,11 +28,12 @@ int _atoi(char *s)
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			digt = s[i] - '0';
-			num = num * 10 + digt;
-			if (sgn == 1)
+			if (sgn % 2 != 0)
 			{
 				digt = -digt;
 			}
+			num = num * 10 + digt;
+
 			chk_dg = 1;
 			if (s[i + 1] < '0' || s[i + 1] > '9')
 			{
