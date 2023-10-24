@@ -18,24 +18,21 @@ int _atoi(char *s)
 	chk_dg = 0;
 
 	while (s[len] != '\0')
-	{
 		len++;
-	}
+
 	while (i < len && chk_dg == 0)
 	{
 		if (s[i] != '\0' && s[i] == '-')
-		{
 			++sgn;
-		}
+
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			digt = s[i] - '0';
+			num = num * 10 + digt;
 			if (sgn == 1)
 			{
 				digt = -digt;
 			}
-			num = num * 10 + digt;
-
 			chk_dg = 1;
 			if (s[i + 1] < '0' || s[i + 1] > '9')
 			{
