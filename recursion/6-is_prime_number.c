@@ -11,7 +11,6 @@ int is_prime_number(int n)
 	int m = 5;
 
 	if (n <= 1)
-
 	{
 		return (0);
 	}
