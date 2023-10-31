@@ -29,22 +29,18 @@ int main(int argc, char *argv[])
 			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
 				printf("Error\n");
-				found = 1;
-				break;
-			}
-		}
-		if (!found)
-		{
-			number = atoi(argv[i]);
-			if (number < 0)
-			{
-				printf("Error\n");
 				return (1);
 			}
-			sum = sum + number;
 		}
-	}
-	printf("%d\n", sum);
 
+		number = atoi(argv[i]);
+		if (number < 0)
+		{
+			printf("Error\n");
+			return (1);
+		}
+		sum = sum + number;
+	}
+	printf("%i\n", sum);
 	return (found ? 1 : 0);
 }
