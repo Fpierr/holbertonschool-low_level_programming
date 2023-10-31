@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 	int i = 0;
 	int j = 0;
 	int sum = 0;
+	int number = 0;
 	int found = 0;
 
 	if (argc <= 1)
@@ -34,15 +35,13 @@ int main(int argc, char *argv[])
 		}
 		if (!found)
 		{
-			if (atoi(argv[i]) < 0)
+			number = atoi(argv[i]);
+			if (number < 0)
 			{
 				printf("Error\n");
 				return (1);
 			}
-			else
-			{
-				sum = sum + atoi(argv[i]);
-			}
+			sum = sum + number;
 		}
 	}
 	printf("%d\n", sum);
