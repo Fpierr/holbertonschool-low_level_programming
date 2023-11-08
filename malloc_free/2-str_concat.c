@@ -40,8 +40,6 @@ char *str_concat(char *s1, char *s2)
 		T[i + j] = s2[j];
 	}
 	T[i + j] = '\0';
-	if (T[i + j] == '\0')
-		T[i + j] = '$';
 
 	return (T);
 }
