@@ -19,7 +19,7 @@ int _strlen(char *s)
 }
 
 /**
- * concatenates two strings
+ * string_nconcat - oncatenates two strings
  * @s1: the first string will be concatenate
  * @s2: the second string to concatanate
  * @n: the first n bytes of s2 and NULL treminated
@@ -35,6 +35,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (s2 == NULL)
 		s2 = NULL;
+
 	if (n >= len2)
 		n = len2;
 
@@ -48,9 +49,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	for (j = 0; j < n; j++)
 	{
-		s3[len1 + j] = s2[j];
+		s3[i + j] = s2[j];
 	}
-	s3[len1 + n] = '\0';
+	s3[i + j] = '\0';
 
 	return (s3);
 }
