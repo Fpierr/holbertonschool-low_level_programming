@@ -1,5 +1,7 @@
 #include "main.h"
 
+#define BUFFER_SIZE 1024
+
 int *open_file(const char *src_file, const char *dest_file);
 void copy_file_content(int file_from, int file_to);
 void close_file(int *file_d);
@@ -48,12 +50,11 @@ int *open_file(const char *src_file, const char *dest_file)
  */
 void copy_file_content(int file_from, int file_to)
 {
-	char buffer[1024];
+	char buffer[BUFFER_SIZE];
 	ssize_t r, w;
 
-	do
-	{
-		r = read(file_from, buffer, 1024);
+	do {
+		r = read(file_from, buffer, BUFFER_SIZE);
 		if (r == -1)
 		{
 			dprintf(STDERR_FILENO,
@@ -100,7 +101,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "%s\n Usage: cp file_from file_to",
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to %s\n",
 			       argv[0]);
 		exit(97);
 	}
