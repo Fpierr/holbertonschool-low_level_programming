@@ -27,16 +27,14 @@ int *open_file(const char *src_file, const char *dest_file)
 	fd[0] = open(src_file, O_RDONLY);
 	if (fd[0] == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
-				src_file);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_file);
 		exit(98);
 	}
 
 	fd[1] = open(dest_file, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd[1] == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n",
-				dest_file);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_file);
 		exit(99);
 	}
 	return (fd);
@@ -57,17 +55,14 @@ void copy_file_content(int file_from, int file_to)
 		r = read(file_from, buffer, BUFFER_SIZE);
 		if (r == -1)
 		{
-			dprintf(STDERR_FILENO,
-					"Error: Can't read from file %d\n",
-					file_from);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %d\n", file_from);
 			exit(98);
 		}
 
 		w = write(file_to, buffer, r);
 		if (w == -1 || r != w)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %d\n",
-					file_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %d\n", file_to);
 			exit(99);
 		}
 	} while (r > 0);
@@ -82,8 +77,7 @@ void close_file(int *file_d)
 {
 	if (close(file_d[0]) == -1 || close(file_d[1]) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n",
-				file_d[0]);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_d[0]);
 		exit(100);
 	}
 	free(file_d);
