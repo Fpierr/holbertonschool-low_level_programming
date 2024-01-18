@@ -41,19 +41,28 @@ int binary_search(int *array, size_t size, int value)
 /**
  * print_array - print all elements in an array
  * @array: list of elements
- * @i: index
- * @size: the size of the array
+ * @high: upper bound
+ * @low: lower bound
+ *
+ * Return: void
  */
-void print_array(int *array, size_t i, size_t size)
+void print_array(int *array, size_t high, size_t low)
 {
+	if (low > high)
+		return;
 	printf("Searching in array: ");
-	while (i < size)
+	if (low == high)
 	{
-		if (i + 1 == size)
-			printf("%d ", array[i]);
-		else
-			printf("%d, ", array[i]);
-		i++;
+		printf("%u\n", array[high]);
+		return;
+	}
+
+	while (low <= high)
+	{
+		printf("%u", array[low]);
+		if (low != high)
+			printf(", ");
+		low++;
 	}
 	printf("\n");
 }
