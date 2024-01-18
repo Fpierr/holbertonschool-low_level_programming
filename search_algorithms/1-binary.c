@@ -4,7 +4,7 @@
  * binary_search - using the Binary search algorithm to search value
  * in a sorted array
  * @array: the pointer content an array
- * @size_t: the size of the array
+ * @size: the size of the array
  * @value: the value to search
  *
  * Return: int
@@ -46,6 +46,7 @@ int binary_search(int *array, size_t size, int value)
  */
 void print_array(int *array, size_t i, size_t size)
 {
+	printf("Searching in array: ");
 	while (i < size)
 	{
 		if (i + 1 == size)
