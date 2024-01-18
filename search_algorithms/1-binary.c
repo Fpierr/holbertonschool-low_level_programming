@@ -15,7 +15,7 @@ int binary_search(int *array, size_t size, int value)
 	size_t high = size - 1;
 	size_t half = 0;
 
-	if (array == NULL || value == 0)
+	if (array == NULL || size == 0)
 		return (-1);
 
 	print_array(array, low, size);
@@ -41,8 +41,8 @@ int binary_search(int *array, size_t size, int value)
 /**
  * print_array - print all elements in an array
  * @array: list of elements
- * @i: index to init
- * @size: size of the array
+ * @i: index
+ * @size: the size of the array
  */
 void print_array(int *array, size_t i, size_t size)
 {
